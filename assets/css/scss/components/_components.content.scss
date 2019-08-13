@@ -1,0 +1,144 @@
+// # Components: Content
+// -----------------------------------------------------------------------------
+
+// ## Header
+// -----------------------------------------------------------------------------
+
+.c-site-header {
+	padding-top: $global-spacing-unit;
+}
+
+.c-site-header__logo {
+	display: inline-block;
+	color: $color-text;
+	@include font-size($font-size-h4);
+	font-weight: $font-weight-bold;
+	text-decoration: none;
+	@include rem(margin-bottom, $global-spacing-unit-large);
+	margin-left: $gutter;
+	margin-right: $gutter;
+
+	&:hover {
+		color: $color-link;
+	}
+}
+
+@include respond-to(small) {
+	.c-site-header {
+		position: fixed;
+		width: 224px;
+	}
+}
+
+
+
+// ## Primary Navigation
+// -----------------------------------------------------------------------------
+
+.c-navigation__item {
+	&.is-selected {
+		a {
+			background-color: #fff;
+		}
+	}
+}
+
+.c-navigation__link {
+	display: block;
+	color: $color-text;
+	line-height: 1em;
+	text-decoration: none;
+	@include rem(margin-bottom, $global-spacing-unit-tiny);
+	@include rem(padding, $global-spacing-unit-small);
+
+	&:hover {
+		background-color: $color-selected;
+	}
+}
+
+@include respond-to(large) {
+	.c-navigation__link {
+		border-top-left-radius: $border-radius;
+		border-bottom-left-radius: $border-radius;
+	}
+}
+
+
+
+// ## Main content
+// -----------------------------------------------------------------------------
+
+.c-main-content {
+	background-color: #fff;
+	border-radius: $border-radius;
+	@include rem(margin-bottom, $global-spacing-unit-large);
+}
+
+@include respond-to(small) {
+	.c-main-content {
+		width: calc(100% - 224px);
+		margin-left: 224px;
+		margin-right: $gutter;
+	}
+}
+
+
+
+// ## Objects: List Bare
+// -----------------------------------------------------------------------------
+
+.o-list-bare {
+	list-style: none;
+	margin: 0;
+}
+
+
+
+// ## Objects: Box
+// -----------------------------------------------------------------------------
+
+.o-box {
+	display: block;
+	@include rem(padding-top, $global-spacing-unit-giant);
+	@include rem(padding-bottom, $global-spacing-unit-giant);
+	padding-left: $global-spacing-unit-small;
+	padding-right: $global-spacing-unit-small;
+	@include clearfix();
+
+	> :last-child {
+		margin-bottom: 0;
+	}
+}
+
+@include respond-to(small) {
+	.o-box {
+		padding-left: $global-spacing-unit-large;
+		padding-right: $global-spacing-unit-large;
+	}
+}
+
+@include respond-to(medium) {
+	.o-box {
+		padding-left: $global-spacing-unit-giant;
+		padding-right: $global-spacing-unit-giant;
+	}
+}
+
+@include respond-to(large) {
+	.o-box {
+		padding-left: 96px;
+		padding-right: 96px;
+	}
+}
+
+
+
+// ## Objects: Wrapper
+// -----------------------------------------------------------------------------
+
+.o-wrapper {
+	@include clearfix();
+	margin-right: auto;
+	margin-left:  auto;
+	max-width: $wrapper-width;
+}
